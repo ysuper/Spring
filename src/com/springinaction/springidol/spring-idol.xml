@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="
+ http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!--1 -->
+	<bean id="duke" class="com.springinaction.springidol.Juggler">
+		<!-- <constructor-arg value="15" /> -->
+	</bean>
+	<!--2 -->
+	<bean id="sonnet29" class="com.springinaction.springidol.Sonnet29">
+	</bean>
+	<!--3 -->
+	<bean id="poeticDuke" class="com.springinaction.springidol.PoeticJuggler">
+		<constructor-arg value="15" />
+		<constructor-arg ref="sonnet29" />
+	</bean>
+	<!--4 -->
+	<bean id="theStage" class="com.springinaction.springidol.Stage"
+		factory-method="getInstance">
+	</bean>
+	<!--5 -->
+	<bean id="auditorium" class="com.springinaction.springidol.Auditorium"
+		init-method="turnOnLights" destroy-method="turnOffLights">
+	</bean>
+	<!--6 -->
+	<bean id="kenny" class="com.springinaction.springidol.Instrumentalist">
+		<property name="song" value="Jingle Bells" />
+		<property name="age" value="37" />
+		<property name="instrument" ref="saxophone" /> 
+	</bean>
+	<!--7 -->
+	<bean id="saxophone" class="com.springinaction.springidol.Saxophone" />
+</beans> 
