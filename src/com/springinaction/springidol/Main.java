@@ -12,8 +12,8 @@ public class Main {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/springinaction/springidol/spring-idol.xml");  
 		
 		// new com.springinaction.springidol.Juggler(); 
-		Performer performer1 = (Performer) ctx.getBean("duke");
-		performer1.perform();
+//		Performer performer1 = (Performer) ctx.getBean("duke");
+//		performer1.perform();
 		
 		// Poem sonnet29 = new Sonnet29();  
 		// Performer duke = new PoeticJuggler(15, sonnet29); 
@@ -48,8 +48,9 @@ public class Main {
 //		List<City> cities = (List<City>) ctx.getBean("cities");
 //		System.out.println(cities);
 
-		City querySet = (City) ctx.getBean("querySet");
+		QuerySet querySet = (QuerySet) ctx.getBean("querySet");
 		System.out.println(querySet);
+
 	}
 
 }
